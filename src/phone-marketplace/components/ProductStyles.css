@@ -1,0 +1,126 @@
+/* ProductStyles.css */
+
+.product-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    width: 150%; /* Set to 100% to take up the entire width */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .form-column {
+    flex-basis: 48%;
+    margin-bottom: 15px;
+  }
+  
+  .form-column:last-child {
+    flex-basis: 100%;
+  }
+  
+  h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea,
+  p {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Add media query for smaller screens */
+  @media (max-width: 768px) {
+    .product-form {
+      width: 90%;
+    }
+  
+    .form-column {
+      flex-basis: 100%;
+    }
+  }
+  
+
+  .product-list {
+    padding: 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: border-color 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .product-item:hover {
+    border: 1px solid #007bff;
+  }
+  
+  .product-item:focus {
+    outline: none;
+  }
+  .product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .product-details {
+    padding: 10px;
+    text-align: left;
+    position: relative;
+  }
+  
+  .condition-hidden {
+    display: none;
+  }
+  
+  .product-item:hover .condition-hidden {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    z-index: 1;
+  }
+  
