@@ -21,10 +21,15 @@ const Login = ({ onLogin }) => {
     }
   };
 
+  const handleCreateAccount = () => {
+    // Navigate to the registration page
+    navigate('/register');
+  };
+
   return (
     <div className="login-form-container">
       <div className="login-form">
-        <h2>Login</h2>
+        <h2>Registration</h2>
         <form>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
@@ -44,9 +49,14 @@ const Login = ({ onLogin }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="button" onClick={handleLogin}>
-            Login
-          </button>
+          <div className="form-group">
+            <button type="button" onClick={handleLogin}>
+              Login
+            </button>
+            <button type="button" onClick={handleCreateAccount}>
+              Create New Account
+            </button>
+          </div>
         </form>
       </div>
     </div>

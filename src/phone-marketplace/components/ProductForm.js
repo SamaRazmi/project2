@@ -1,6 +1,5 @@
-// Import necessary dependencies and styles
 import React, { useState } from 'react';
-import axios from 'axios'; // Assuming axios is installed in your project
+import axios from 'axios'; //considering axios is installed in your project
 import './ProductStyles.css';
 
 // Functional component ProductForm
@@ -25,14 +24,13 @@ const ProductForm = ({ addProduct }) => {
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
+    if (file) {
+      reader.readAsDataURL(file);
+    }
 
     reader.onloadend = () => {
       setProduct({ ...product, photo: reader.result });
     };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
   };
 
   // Event handler for form submission
@@ -53,7 +51,7 @@ const ProductForm = ({ addProduct }) => {
           timeForSale: product.timeForSale,
         },
         {
-          timeout: 10000,
+          timeout: 20000,
           maxContentLength: Infinity,
           headers: {
             'Content-Type': 'application/json',
@@ -87,7 +85,13 @@ const ProductForm = ({ addProduct }) => {
       <div className="form-column">
         <label>
           Name:
-          <input type="text" name="name" placeholder='Please Enter Your Name' value={product.name} onChange={handleChange} />
+          <input
+            type="text"
+            name="name"
+            placeholder="Please Enter Your Name"
+            value={product.name}
+            onChange={handleChange}
+          />
         </label>
         <label>
           Photo:
@@ -95,7 +99,12 @@ const ProductForm = ({ addProduct }) => {
         </label>
         <label>
           Brand:
-          <input type="text" name="brand" value={product.brand} onChange={handleChange} />
+          <input
+            type="text"
+            name="brand"
+            value={product.brand}
+            onChange={handleChange}
+          />
         </label>
         <label>
           Time for Sale:
@@ -105,7 +114,12 @@ const ProductForm = ({ addProduct }) => {
       <div className="form-column">
         <label>
           Color:
-          <input type="text" name="color" value={product.color} onChange={handleChange} />
+          <input
+            type="text"
+            name="color"
+            value={product.color}
+            onChange={handleChange}
+          />
         </label>
         <label>
           Condition:
@@ -122,7 +136,12 @@ const ProductForm = ({ addProduct }) => {
       <div className="form-column">
         <label>
           Price:
-          <input type="text" name="price" value={product.price} onChange={handleChange} />
+          <input
+            type="text"
+            name="price"
+            value={product.price}
+            onChange={handleChange}
+          />
         </label>
       </div>
 

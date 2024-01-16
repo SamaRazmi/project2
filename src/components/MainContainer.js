@@ -14,8 +14,8 @@ const MainContainer = () => {
         <ul className="phone-list">
           <li>
             <strong>Smartphones:</strong> These pocket-sized wonders go beyond
-            communication, integrating high-speed internet, advanced
-            processors, and intuitive interfaces for multifunctional use.
+            communication, integrating high-speed internet, advanced processors,
+            and intuitive interfaces for multifunctional use.
           </li>
           <li>
             <strong>Foldable Phones:</strong> Breaking design barriers, these
@@ -67,7 +67,7 @@ const MainContainer = () => {
         <p>
           This diverse array of phones showcases the industry's commitment to
           innovation, providing options that cater to a wide spectrum of user
-          needs. Feel free to copy and use this passage!
+          needs.
         </p>
       </div>
       <div className="left">

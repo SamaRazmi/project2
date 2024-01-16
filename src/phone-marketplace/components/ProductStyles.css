@@ -1,126 +1,261 @@
-/* ProductStyles.css */
-
+* {
+  outline: none;
+}
 .product-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 20px;
-    width: 150%; /* Set to 100% to take up the entire width */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 150%; /* Set to 100% to take up the entire width */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-column {
+  flex-basis: 48%;
+  margin-bottom: 15px;
+}
+
+.form-column:last-child {
+  flex-basis: 100%;
+}
+
+h2 {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+p {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* media query for smaller screens */
+@media (max-width: 768px) {
+  .product-form {
+    width: 90%;
   }
-  
+
   .form-column {
-    flex-basis: 48%;
-    margin-bottom: 15px;
-  }
-  
-  .form-column:last-child {
     flex-basis: 100%;
   }
-  
-  h2 {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 0;
-    width: 100%;
-    text-align: center;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  textarea,
-  p {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    padding: 10px 15px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Add media query for smaller screens */
-  @media (max-width: 768px) {
-    .product-form {
-      width: 90%;
-    }
-  
-    .form-column {
-      flex-basis: 100%;
-    }
-  }
-  
+}
 
-  .product-list {
-    padding: 20px;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .product-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    transition: border-color 0.3s;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .product-item:hover {
-    border: 1px solid #007bff;
-  }
-  
-  .product-item:focus {
-    outline: none;
-  }
-  .product-item img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
-    object-fit: cover;
-  }
-  
-  .product-details {
-    padding: 10px;
-    text-align: left;
-    position: relative;
-  }
-  
-  .condition-hidden {
-    display: none;
-  }
-  
-  .product-item:hover .condition-hidden {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    z-index: 1;
-  }
-  
+.product-list {
+  padding: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: border-color 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-item:hover {
+  border: 1px solid #007bff;
+}
+
+.product-item:focus {
+  outline: none;
+}
+.product-item img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.condition-hidden {
+  display: none;
+}
+
+.product-item:hover .condition-hidden {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  z-index: 1;
+}
+/* these styles at the end of ProductStyles.css */
+
+.product-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1; /* the buttons are above other elements */
+}
+
+.add-to-cart-button,
+.bid-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px; /* margin between buttons */
+  transition: background-color 0.3s; /* transition for smoother hover effect */
+}
+
+.add-to-cart-button:hover,
+.bid-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.cart-button button {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+/* Add this to your ProductStyles.css or your styling file */
+.selected-product {
+  margin-top: 20px;
+}
+
+.selected-product h2 {
+  margin-bottom: 10px;
+}
+
+.selected-product ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selected-product li {
+  margin-bottom: 5px;
+}
+
+/* Add this to your CSS file or style tag */
+.product-container {
+  display: flex;
+  border: 2px solid #ddd; /* Border color and width */
+  padding: 20px; /* Adjust padding as needed */
+  max-width: 800px; /* Set a maximum width for the container */
+  margin: 20px auto; /* Center the container on the page */
+}
+
+.product-image {
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.product-image img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  height: auto; /* Maintain aspect ratio of the image */
+}
+
+/* Additional styling for the product details if needed */
+.product-details h3 {
+  color: #333;
+}
+
+.product-details p {
+  margin-bottom: 10px;
+}
+
+/* ... (existing styles BidPage) */
+
+.auction-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.auction-container h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.auction-container p {
+  margin-bottom: 10px;
+}
+
+.bid-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bid-input-container label {
+  margin-bottom: 5px;
+}
+
+.bid-input-container input {
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.bid-input-container button {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bid-input-container button:hover {
+  background-color: #218838;
+}
