@@ -1,18 +1,20 @@
-# **This is the second project done by Samaneh Razmi(Sama_Flower).**
+# **This is the second project done by Samaneh Razmi (Sama_Flower).**
 
-# **This project is about E-Commerce site, especially phone E-Commerce. Anyway, you can expand it to anything you want.**
+## Project Overview
 
-# **My default group was group 7, but unfortunately, my group mates did not cooperate with me. As a result, I have done it all according to the previous information and the information obtained from the course.**
+**This project is about E-Commerce site, especially phone E-Commerce. Anyway, you can expand it to anything you want.**
 
-# **The phone e-commerce site is just a name. I have designed the components in such a way that they can be used separately in any way.**
+Unfortunately, my default group (group 7) did not cooperate, and I completed the project independently using previous information and course materials.
 
-# Getting Started with Create React App
+The term "phone e-commerce site" is just a name. I designed the components to be versatile and usable separately.
 
-## Available Scripts
+## Getting Started with Create React App
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
