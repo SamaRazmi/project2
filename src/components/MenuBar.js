@@ -18,7 +18,6 @@ const MenuBar = ({ user, onLogout }) => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        {/* Change the link to "/listings" when "Shop" is clicked */}
         <li>
           <Link to="/shop">Shop</Link>
         </li>

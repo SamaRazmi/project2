@@ -88,7 +88,7 @@ const ProductForm = ({ addProduct }) => {
           <input
             type="text"
             name="name"
-            placeholder="Please Enter Your Name"
+            placeholder="Please Enter Name"
             value={product.name}
             onChange={handleChange}
           />
@@ -152,5 +152,4 @@ const ProductForm = ({ addProduct }) => {
   );
 };
 
-// Export the ProductForm component
 export default ProductForm;

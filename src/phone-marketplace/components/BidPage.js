@@ -17,7 +17,9 @@ const BidPage = () => {
     const fetchProduct = async () => {
       try {
         // Fetch product data from the mock API
-        const response = await fetch(`https://6570367409586eff6640ea15.mockapi.io/api/products/${productId}`);
+        const response = await fetch(
+          `https://6570367409586eff6640ea15.mockapi.io/api/products/${productId}`
+        );
 
         // Handle errors if the request is not successful
         if (!response.ok) {
@@ -42,7 +44,9 @@ const BidPage = () => {
     const fetchAuctionData = async () => {
       try {
         // Fetch auction data from the custom API endpoint (modify as needed)
-        const response = await fetch(`https://your-auction-api.com/api/auction/${productId}`);
+        const response = await fetch(
+          `https://6570367409586eff6640ea15.mockapi.io/api/products/${productId}`
+        );
 
         // Handle errors if the request is not successful
         if (!response.ok) {
@@ -63,27 +67,44 @@ const BidPage = () => {
   }, [productId]);
 
   // Function to handle bid submission
-  const handleBidSubmit = () => {
-    // Simulate a delay to mimic a network request
-    setTimeout(() => {
-      try {
-        // Parse the current bid price and convert it to a number
-        const currentBidPrice = parseFloat(bidPrice);
-  
-        // Increase the bid price locally (you can adjust the increment as needed)
-        const newLocallyIncreasedBidPrice = currentBidPrice;
-  
-        // Update bidPrice state with the new locally increased bid price
-        setBidPrice(newLocallyIncreasedBidPrice);
-  
-        // Update numBids state with a hypothetical increase in the number of bids
-        setNumBids(numBids + 1);
-      } catch (error) {
-        console.error('Error submitting bid:', error);
+  const handleBidSubmit = async () => {
+    try {
+      // Parse the current bid price and convert it to a number
+      const currentBidPrice = parseFloat(bidPrice);
+
+      // Increase the bid price locally (you can adjust the increment as needed)
+      const newLocallyIncreasedBidPrice = currentBidPrice;
+
+      // Update bidPrice state with the new locally increased bid price
+      setBidPrice(newLocallyIncreasedBidPrice);
+
+      // Update numBids state with a hypothetical increase in the number of bids
+      setNumBids(numBids + 1);
+
+      // Update the mock API with the new bid data
+      const updateResponse = await fetch(
+        `https://6570367409586eff6640ea15.mockapi.io/api/products/${productId}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            bidPrice: newLocallyIncreasedBidPrice,
+            numBids: numBids + 1,
+            // Add other fields if needed
+          }),
+        }
+      );
+
+      if (!updateResponse.ok) {
+        throw new Error('Failed to update auction data in the mock API');
       }
-    }, 1000); // Simulate a 1-second delay to mimic a network request
+    } catch (error) {
+      console.error('Error submitting bid:', error);
+    }
   };
-  
+
   // JSX to render the BidPage component
   return (
     <div>
