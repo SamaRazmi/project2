@@ -1,3 +1,6 @@
+You can access this site on Render at the following address: https://project2-3kkm.onrender.com 
+(in this site uses mock database)
+
 # **This is the second project done by Samaneh Razmi (Sama_Flower).**
 
 ## Project Overview
